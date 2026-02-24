@@ -6,7 +6,8 @@ import RSVPForm from "./components/RSVPForm";
 
 export default function WeddingInvite() {
   return (
-    <div className="page">
+    <div className="phone-container">
+      <div className="page">
       <section className="section hero" id="welcome">
         <div className="hero-content">
           <h1 className="hero-names">
@@ -83,53 +84,47 @@ export default function WeddingInvite() {
 
 
 
+{/* 13:30 трансфер з Іванкова > Бориспіль > Київ > Обухів 
+14:30 збір гостей 
+м. Обухів вул. Київська 119
+15:30 бенкет
+22:00 Завершення */}
+
+
       {/* 5.3 Таймінг подій */}
       <section className="section timeline" id="schedule">
       <div className="section-inner timeline-inner">
         <h2 className="section-title">Розклад свята</h2>
         <ul className="timeline-list">
           <li className="timeline-item">
-            <div className="timeline-time">10:30</div>
+            <div className="timeline-time">13:30</div>
             <div className="timeline-content">
               <h3 className="timeline-event">Збір гостей</h3>
-              <p className="timeline-desc">Центральний РАГС м. Києва</p>
+              <p className="timeline-desc">Іванкова {'>'} Бориспіль {'>'} Київ {'>'} Обухів </p>
               <p className="timeline-map">📍 Точка на карті</p>
             </div>
           </li>
           <li className="timeline-item">
-            <div className="timeline-time">11:00</div>
+            <div className="timeline-time">14:30</div>
             <div className="timeline-content">
-              <h3 className="timeline-event">Церемонія</h3>
-              <p className="timeline-desc">Урочиста церемонія шлюбу</p>
-            </div>
-          </li>
-          <li className="timeline-item">
-            <div className="timeline-time">12:00</div>
-            <div className="timeline-content">
-              <h3 className="timeline-event">Вітальний фуршет</h3>
-              <p className="timeline-desc">Легкі закуски та напої</p>
+              <h3 className="timeline-event">Збір гостей</h3>
+              <p className="timeline-desc">м. Обухів вул. Київська 119 </p>
             </div>
           </li>
           <li className="timeline-item">
             <div className="timeline-time">10:30</div>
             <div className="timeline-content">
-              <h3 className="timeline-event">Збір гостей</h3>
-              <p className="timeline-desc">Центральний РАГС м. Києва</p>
+              <h3 className="timeline-event">Банкет</h3>
+              <p className="timeline-desc">Ресторан "Nazva"</p>
               <p className="timeline-map">📍 Точка на карті</p>
             </div>
           </li>
+     
           <li className="timeline-item">
-            <div className="timeline-time">11:00</div>
+            <div className="timeline-time">22:00</div>
             <div className="timeline-content">
-              <h3 className="timeline-event">Церемонія</h3>
-              <p className="timeline-desc">Урочиста церемонія шлюбу</p>
-            </div>
-          </li>
-          <li className="timeline-item">
-            <div className="timeline-time">12:00</div>
-            <div className="timeline-content">
-              <h3 className="timeline-event">Вітальний фуршет</h3>
-              <p className="timeline-desc">Легкі закуски та напої</p>
+              <h3 className="timeline-event">Завершення</h3>
+              <p className="timeline-desc">Підсумок нашого дня</p>
             </div>
           </li>
         </ul>
@@ -156,8 +151,9 @@ export default function WeddingInvite() {
         <div className="info-icon">🍾</div>
         <h3 className="info-title">Замість квітів</h3>
         <p className="info-text">
-          Замість квітів, які швидко зів’януть, нам буде приємно отримати від вас пляшечку напою.
-        </p>
+      
+Замість квітів (які, на жаль, ми не зможемо всі забрати додому) будемо раді отримати щось, що залишиться з нами надовго: пляшечку алкоголю для нашої сімейної колекції, улюблену книгу з підписом, настільну гру для спільних вечорів або сертифікат на враження чи покупку.
+Обіцяємо — кожен такий подарунок стане частиною історії нашої родини 🤍        </p>
       </div>
 
       {/* 3 */}
@@ -191,6 +187,7 @@ export default function WeddingInvite() {
           <RSVPForm />
         </div>
       </section>
+      </div>
     </div>
   );
 }
