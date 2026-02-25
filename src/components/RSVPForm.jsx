@@ -11,10 +11,11 @@ export default function RSVPForm() {
   });
 
   const drinkOptions = [
-    { label: "Шампанське 🥂", value: "Шампанське" },
+    { label: "Ігристе 🥂", value: "Шампанське" },
+    { label: "Вино 🍷", value: "Вино" },
     { label: "Коньяк 🥃", value: "Коньяк" },
     { label: "Горілка 🥃", value: "Горілка" },
-    { label: "Вино 🍷", value: "Вино" },
+    { label: "Безалкогольні напої 🥤", value: "Безалкогольні напої"}
   ];
 
   const handleDrinkChange = (value) => {
@@ -31,7 +32,6 @@ export default function RSVPForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(form);
-    // Тут можна вставити ваш fetch
     alert("Дякуємо за відповідь ❤️");
   };
 
@@ -40,21 +40,19 @@ export default function RSVPForm() {
     <form onSubmit={handleSubmit} className="rsvp-form">
       <h2 className="section-title">Підтвердження присутності</h2>
 
-      {/* Імʼя */}
       <label className="field">
         <span>Ваше ім’я</span>
         <input
           type="text"
-          placeholder="Наприклад, Оля та Андрій"
+          placeholder="Наприклад, Оля Петенко"
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
           required
         />
       </label>
 
-      {/* Чи будете на весіллі */}
       <div className="field">
-        {/* <span>Чи будете на весіллі?</span> */}
+        <span>Чи будете на весіллі?</span>
         <label>
           <input
             type="radio"
@@ -78,34 +76,7 @@ export default function RSVPForm() {
         </label>
       </div>
 
-      {/* Чи плануєте бути в РАГС */}
-      <div className="field">
-        <span>Чи плануєте бути в РАГС?</span>
-        <label>
-          <input
-            type="radio"
-            name="willRegister"
-            value="Так"
-            checked={form.willRegister === "Так"}
-            onChange={(e) =>
-              setForm({ ...form, willRegister: e.target.value })
-            }
-          />
-          Так
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="willRegister"
-            value="Ні"
-            checked={form.willRegister === "Ні"}
-            onChange={(e) =>
-              setForm({ ...form, willRegister: e.target.value })
-            }
-          />
-          Ні
-        </label>
-      </div>
+   
 
       {/* Алкоголь */}
       <div className="field">
@@ -139,6 +110,10 @@ export default function RSVPForm() {
       <button type="submit" className="primary-button">
         Відправити відповідь
       </button>
+      <p className="rsvp-deadline">
+    Будь ласка, надішліть свої відповіді до 19.04.2026
+  </p>
+
     </form>
   );
 }

@@ -1,4 +1,3 @@
-/* ===== Глобальний фон додатку ===== */
 :root {
   --text-main: #985855;        /* головний карамельний */
   --text-muted: #b07a74;       /* світліший карамельний */
@@ -8,13 +7,11 @@
   --border-soft: rgba(223, 175, 191, 0.4);
 }
 
-/* ===== Phone Container для великих екранів ===== */
 .phone-container {
   width: 100%;
   min-height: 100vh;
 }
 
-/* На мобільних пристроях - повна ширина */
 @media (max-width: 768px) {
   .phone-container {
     display: block;
@@ -28,7 +25,6 @@
   }
 }
 
-/* На великих екранах - імітація телефону */
 @media (min-width: 769px) {
   .phone-container {
     display: flex;
@@ -36,17 +32,17 @@
     justify-content: center;
     min-height: 100vh;
     padding: 2rem;
-    /* background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%); */
   }
   
   .phone-container .page {
     width: 100%;
-    max-width: 430px; /* Ширина як у звичайного телефону */
+    max-width: 430px; 
     min-height: 90vh;
     height: auto;
     max-height: 90vh;
     margin: 0 auto;
-    border-radius: 40px; /* Закруглені кути як у телефону */
+    border-radius: 40px; 
+
     overflow-y: auto;
     overflow-x: hidden;
     box-shadow: 
@@ -55,13 +51,9 @@
       0 25px 80px rgba(0, 0, 0, 0.4), /* Глибока тінь */
       0 0 120px rgba(0, 0, 0, 0.15);
     position: relative;
-    /* background: linear-gradient(
-      rgba(255, 255, 255, 0.85),
-      rgba(223, 175, 191, 0.35)
-    ); */
+
   }
   
-  /* Імітація вирізу для камери (notch) */
   .phone-container .page::before {
     content: "";
     position: absolute;
@@ -76,7 +68,6 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
   
-  /* Додатковий ефект для більш реалістичного вигляду */
   .phone-container .page::after {
     content: "";
     position: absolute;
@@ -86,10 +77,8 @@
     bottom: 0;
     border-radius: 40px;
     pointer-events: none;
-    /* box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1); */
   }
 
-  /* На великих екранах всередині "телефону" робимо імена меншими */
   .phone-container .hero-names {
     font-size: clamp(2.1rem, 3.2vw, 3.2rem);
     letter-spacing: 0.08em;
@@ -100,13 +89,12 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Playfair Display", serif;
   position: relative;
   overflow-x: hidden;
 }
 
 
-/* ===== Основний екран (glass ефект) ===== */
 
 .page {
   color: var(--text-main);
@@ -126,7 +114,6 @@ body {
 }
 
 
-/* ===== Секції ===== */
 
 .section {
   min-height: 100vh;
@@ -164,16 +151,13 @@ body {
 }
 
 
-
-
-/* ===== Hero ===== */
-
 .hero {
   position: relative;
   background: url("../src/assets/mainPhoto.jpg") center / cover no-repeat;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
   padding-bottom: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -188,26 +172,72 @@ body {
   padding-bottom: 2rem;
 }
 
+.countdown-inner {
+  align-items: center;
+  text-align: center;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.countdown-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 1rem 0.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown-value {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #985855;
+  margin-bottom: 0.3rem;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #b07a74;
+}
+
 .hero-names {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 300;
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-family: "Allura", cursive;
+  font-size: 3.5rem;  font-weight: 300;
+  /* font-size: clamp(3rem, 8vw, 6rem); */
   letter-spacing: 0.1em;
-  color: var( --soft-white);       /* основний карамельний */
+  color: var( --soft-white); 
   text-align: center;
   line-height: 1.2;
   word-wrap: break-word;
   padding: 0 1rem;
 }
+.hero-date {
+  margin-top: 1rem;
+  font-family: "Allura", cursive;
+  /* font-size: 3.5rem; */
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: var(--soft-white); 
+  text-transform: uppercase;
+}
 .amp {
-  color: var( --accent);       /* ніжно-рожевий */
-  font-weight: 400;     /* трохи виразніше */
-  padding: 0 0.3rem;    /* легкий відступ */
+  /* color: var(--text-main);    */
+  font-weight: 300;   
+  padding: 0 0.3rem; 
 }
 #message {
   position: relative;         
   min-height: auto;           
-  height: 70vh;                
+  height: 45vh;                
   align-items: end;
 }
 
@@ -252,10 +282,13 @@ body {
 
 /* ===== Calendar Section ===== */
 
-.calendar {
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   min-height: auto;           
-  height: 70vh;     
+  height: 40vh;     
 }
 
 
@@ -280,7 +313,7 @@ body {
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.8rem;
+  gap: 0.1rem;
 }
 
 .day-name {
@@ -369,6 +402,11 @@ body {
 }
 
 .timeline-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
   min-width: 60px;
   padding: 0.4rem 0.8rem;
   border: 2px solid #c26b85;
@@ -559,4 +597,22 @@ input[type="checkbox"] {
   .hero-text {
     text-align: center;
   }
+}
+.rsvp-deadline {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  color: #7f5a49;
+ 
+}
+
+
+.timeline-map a {
+  text-decoration: none;
+  color: #c26b85;
+  font-weight: 500;
+}
+
+.timeline-map a:hover {
+  text-decoration: underline;
 }
