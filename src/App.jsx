@@ -49,6 +49,7 @@ export default function WeddingInvite() {
 
       </section>
 
+
       <section className="section countdown" id="countdown">
         <div className="section-inner countdown-inner">
         <div className="countdown_title">Залишилось</div>
@@ -124,7 +125,7 @@ export default function WeddingInvite() {
           <li className="timeline-item">
             <div className="timeline-time">15:30</div>
             <div className="timeline-content">
-              <h3 className="timeline-event">Банкет</h3>
+              <h3 className="timeline-event">Бенкет</h3>
               <p className="timeline-desc">Ресторан «Міністерство смаку»</p>
               <p className="timeline-map">
   <a
