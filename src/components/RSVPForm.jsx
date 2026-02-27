@@ -14,8 +14,8 @@ export default function RSVPForm() {
     { label: "Ігристе 🥂", value: "Шампанське" },
     { label: "Вино 🍷", value: "Вино" },
     { label: "Коньяк 🥃", value: "Коньяк" },
-    { label: "Горілка 🥃", value: "Горілка" },
-    { label: "Безалкогольні напої 🥤", value: "Безалкогольні напої"}
+    { label: "Горілка 🧊", value: "Горілка" },
+    { label: "Безалкогольні напої 🧃", value: "Безалкогольні напої"}
   ];
 
   const handleDrinkChange = (value) => {
@@ -31,10 +31,34 @@ export default function RSVPForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
-    alert("Дякуємо за відповідь ❤️");
+  
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxr2VROzDVm5gzTR0-BgAGYhRie_wPOaXmqETbfFof925Re2MUyZXUpOOvEoPXAX3M8Fg/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(form),
+        }
+      );
+  
+      const result = await response.json();
+  
+      if (result.result === "success") {
+        alert("Дякуємо за відповідь ❤️");
+        setForm({
+          name: "",
+          willAttend: "",
+          willRegister: "",
+          drinks: [],
+          wishes: "",
+        });
+      }
+    } catch (error) {
+      console.error("Помилка:", error);
+      alert("Щось пішло не так 😢");
+    }
   };
-
+  
 
   return (
     <form onSubmit={handleSubmit} className="rsvp-form">
@@ -80,7 +104,7 @@ export default function RSVPForm() {
 
       {/* Алкоголь */}
       <div className="field">
-        <span>Які напої плануєте? (можна обрати кілька)</span>
+        <span>Напої: (можна обрати декілька)</span>
         <div className="checkbox-group">
           {drinkOptions.map((drink) => (
             <label key={drink.value}>

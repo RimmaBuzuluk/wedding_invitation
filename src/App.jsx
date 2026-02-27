@@ -40,11 +40,12 @@ export default function WeddingInvite() {
         <div className="hero-content">
           <h1 className="hero-names">
             Oleksandr <span className="amp">and</span> Anna
-          </h1>  
+          </h1>   
+
 
           
                   </div>
-                  <p className="hero-date">22 May 2026</p>
+                  <p className="hero-date">22.05.2026</p>
 
       </section>
 
@@ -52,7 +53,9 @@ export default function WeddingInvite() {
       {/* Таймер до події */}
       <section className="section countdown" id="countdown">
         <div className="section-inner countdown-inner">
+        <div className="countdown_title">Залишилось</div>
           <div className="countdown-grid">
+            
             <div className="countdown-item">
               <div className="countdown-value">
                 {String(timeLeft.days).padStart(2, "0")}
@@ -108,23 +111,23 @@ export default function WeddingInvite() {
           <li className="timeline-item">
             <div className="timeline-time">13:30</div>
             <div className="timeline-content">
-              <h3 className="timeline-event">Збір гостей</h3>
-              <p className="timeline-desc">Іванкова {'>'} Бориспіль {'>'} Київ {'>'} Обухів </p>
+              <h3 className="timeline-event">Трансфер</h3>
+              <p className="timeline-desc">Іванків {'>'} Бориспіль {'>'} Київ {'>'} Обухів </p>
               {/* <p className="timeline-map">📍 Точка на карті</p> */}
             </div>
           </li>
           <li className="timeline-item">
             <div className="timeline-time">14:30</div>
             <div className="timeline-content">
-              <h3 className="timeline-event">Збір гостей</h3>
+              <h3 className="timeline-event">Початок заходу</h3>
               <p className="timeline-desc">м. Обухів вул. Київська 119 </p>
             </div>
           </li>
           <li className="timeline-item">
-            <div className="timeline-time">10:30</div>
+            <div className="timeline-time">15:30</div>
             <div className="timeline-content">
               <h3 className="timeline-event">Банкет</h3>
-              <p className="timeline-desc">Ресторан "Ресторан «Міністерство смаку»"</p>
+              <p className="timeline-desc">Ресторан «Міністерство смаку»"</p>
               <p className="timeline-map">
   <a
     href="https://maps.app.goo.gl/1xzsnwxbrwjFiiRF9"
@@ -140,7 +143,7 @@ export default function WeddingInvite() {
           <li className="timeline-item">
             <div className="timeline-time">22:00</div>
             <div className="timeline-content">
-              <h3 className="timeline-event">Завершення + трансферs</h3>
+              <h3 className="timeline-event">Завершення + трансфер</h3>
               <p className="timeline-desc">Підсумок нашого дня</p>
             </div>
           </li>
@@ -156,11 +159,10 @@ export default function WeddingInvite() {
       
       <div className="info-card">
         <div className="info-icon">🤍</div>
-        <h3 className="info-title">Дрескод</h3>
+        <h3 className="info-title">Дрес-код</h3>
         <p className="info-text">
-        На нашому святі немає дрескоду. 
-    Обирайте вбрання, у якому вам буде комфортно та святково. 
-    Найголовніше — щоб ви почувалися легко, впевнено та із гарним настроєм.        </p>
+        Ми не встановлюємо жодних кольорових чи стилістичних обмежень.
+Обирайте образ, у якому ви відчуваєте себе особливими — для нас головне ваша присутність. </p>
       </div>
 
       <div className="info-card">
