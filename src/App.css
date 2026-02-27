@@ -37,7 +37,7 @@
   .phone-container .page {
     width: 100%;
     max-width: 430px; 
-    min-height: 90vh;
+    /* min-height: 90vh; */
     height: auto;
     max-height: 90vh;
     margin: 0 auto;
@@ -183,7 +183,6 @@ body {
   gap: 0.8rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-
 }
 
 .countdown-item {
@@ -226,23 +225,21 @@ body {
 .hero-date {
   margin-top: 1rem;
   font-family: "Cormorant Garamond", serif;
-
-  /* font-size: 3.5rem; */
   font-size: 2rem;
   letter-spacing: 3px;
   color: var(--soft-white); 
   text-transform: uppercase;
 }
 .amp {
-  /* color: var(--text-main);    */
   font-weight: 300;   
   padding: 0 0.3rem; 
 }
 #message {
   position: relative;         
-  min-height: auto;           
-  height: 45vh;                
-  align-items: end;
+
+  min-height: 30vh;           
+
+  align-items: center;
 }
 
 
@@ -291,8 +288,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: auto;           
-  height: 40vh;     
+  min-height: 50vh;           
+  /* background-color: pink;   */
 }
 
 
@@ -571,12 +568,38 @@ input[type="checkbox"] {
 
 @media (max-width: 860px) {
   .hero-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .hero-text {
     text-align: center;
+  }
+}
+
+/* Додаткова адаптація під маленькі екрани */
+@media (max-width: 600px) {
+  /* .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  } */
+
+  .hero-names {
+    font-size: 2.6rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-date {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+
+  .section {
+    padding: 2.5rem 0.8rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
   }
 }
 .rsvp-deadline {
