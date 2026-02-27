@@ -34,7 +34,7 @@ export default function RSVPForm() {
   
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxr2VROzDVm5gzTR0-BgAGYhRie_wPOaXmqETbfFof925Re2MUyZXUpOOvEoPXAX3M8Fg/exec",
+        "https://script.google.com/macros/library/d/1Ga5DcwxVm29hasa2IkuW81fh0sumw9l_TZWLHn5xPvOTgT-xqmwVGdXB/3",
         {
           method: "POST",
           body: JSON.stringify(form),
