@@ -9,6 +9,8 @@ export default function RSVPForm() {
     drinks: [],
     wishes: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   const drinkOptions = [
     { label: "Ігристе 🥂", value: "Шампанське" },
@@ -31,7 +33,10 @@ export default function RSVPForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
+    if (isSubmitting) return; 
+
+    setIsSubmitting(true);  
     try {
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbxr2VROzDVm5gzTR0-BgAGYhRie_wPOaXmqETbfFof925Re2MUyZXUpOOvEoPXAX3M8Fg/exec",
@@ -56,6 +61,8 @@ export default function RSVPForm() {
     } catch (error) {
       console.error("Помилка:", error);
       alert("Щось пішло не так 😢");
+    } finally {
+      setIsSubmitting(false);
     }
   };
   
@@ -131,8 +138,12 @@ export default function RSVPForm() {
         />
       </label>
 
-      <button type="submit" className="primary-button">
-        Відправити відповідь
+      <button
+        type="submit"
+        className="primary-button"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Відправляємо..." : "Відправити відповідь"}
       </button>
       <p className="rsvp-deadline">
     Будь ласка, надішліть свої відповіді до 19.04.2026
