@@ -129,7 +129,7 @@ export default function WeddingInvite() {
               <p className="timeline-desc">Ресторан «Міністерство смаку»</p>
               <p className="timeline-map">
   <a
-    href="https://maps.app.goo.gl/1xzsnwxbrwjFiiRF9"
+    href="https://maps.app.goo.gl/46bZFQcrWfqk3FEM7"
     target="_blank"
     rel="noopener noreferrer"
   >
